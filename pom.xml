@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.xxtea</groupId>
+    <artifactId>xxtea-java</artifactId>
+    <version>1.0.5</version>
+    <name>XXTEA for Java</name>
+    <description>XXTEA is a fast and secure encryption algorithm. This is a XXTEA library for Java.
+
+It is different from the original XXTEA encryption algorithm. It encrypts and decrypts byte[] instead of 32bit integer array, and the key is also the byte[].</description>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://raw.github.com/xxtea/xxtea-java/master/LICENSE.md</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:https://github.com/xxtea/xxtea-java.git</connection>
+        <developerConnection>scm:https://github.com/xxtea/xxtea-java.git</developerConnection>
+        <url>https://github.com/xxtea/xxtea-java</url>
+    </scm>
+    <dependencies>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
