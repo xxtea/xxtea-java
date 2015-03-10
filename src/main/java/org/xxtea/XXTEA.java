@@ -9,7 +9,7 @@
 |      Roger M. Needham                                    |
 |                                                          |
 | Code Authors: Ma Bingyao <mabingyao@gmail.com>           |
-| LastModified: Mar 9, 2015                                |
+| LastModified: Mar 10, 2015                               |
 |                                                          |
 \**********************************************************/
 
@@ -58,22 +58,22 @@ public final class XXTEA {
             return null;
         }
     }
-    public static final String encryptWithBase64Encoding(byte[] data, byte[] key) {
+    public static final String encryptToBase64String(byte[] data, byte[] key) {
         byte[] bytes = encrypt(data, key);
         if (bytes == null) return null;
         return Base64.encode(bytes);
     }
-    public static final String encryptWithBase64Encoding(String data, byte[] key) {
+    public static final String encryptToBase64String(String data, byte[] key) {
         byte[] bytes = encrypt(data, key);
         if (bytes == null) return null;
         return Base64.encode(bytes);
     }
-    public static final String encryptWithBase64Encoding(byte[] data, String key) {
+    public static final String encryptToBase64String(byte[] data, String key) {
         byte[] bytes = encrypt(data, key);
         if (bytes == null) return null;
         return Base64.encode(bytes);
     }
-    public static final String encryptWithBase64Encoding(String data, String key) {
+    public static final String encryptToBase64String(String data, String key) {
         byte[] bytes = encrypt(data, key);
         if (bytes == null) return null;
         return Base64.encode(bytes);
@@ -93,10 +93,10 @@ public final class XXTEA {
             return null;
         }
     }
-    public static final byte[] decryptBase64EncodingString(String data, byte[] key) {
+    public static final byte[] decryptBase64String(String data, byte[] key) {
         return decrypt(Base64.decode(data), key);
     }
-    public static final byte[] decryptBase64EncodingString(String data, String key) {
+    public static final byte[] decryptBase64String(String data, String key) {
         return decrypt(Base64.decode(data), key);
     }
     public static final String decryptToString(byte[] data, byte[] key) {
@@ -119,7 +119,7 @@ public final class XXTEA {
             return null;
         }
     }
-    public static final String decryptBase64EncodingStringToString(String data, byte[] key) {
+    public static final String decryptBase64StringToString(String data, byte[] key) {
         try {
             byte[] bytes = decrypt(Base64.decode(data), key);
             if (bytes == null) return null;
@@ -129,7 +129,7 @@ public final class XXTEA {
             return null;
         }
     }
-    public static final String decryptBase64EncodingStringToString(String data, String key) {
+    public static final String decryptBase64StringToString(String data, String key) {
         try {
             byte[] bytes = decrypt(Base64.decode(data), key);
             if (bytes == null) return null;
