@@ -1,5 +1,10 @@
 # XXTEA 加密算法的 Java 实现
 
+[![Join the chat at https://gitter.im/xxtea/xxtea-java](https://img.shields.io/badge/GITTER-join%20chat-green.svg)](https://gitter.im/xxtea/xxtea-java?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.xxtea/xxtea-java/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.xxtea/xxtea-java/)
+[![GitHub release](https://img.shields.io/github/release/xxtea/xxtea-java.svg)](https://github.com/xxtea/xxtea-java/releases)
+[![License](https://img.shields.io/github/license/xxtea/xxtea-java.svg)](http://opensource.org/licenses/MIT)
+
 ## 简介
 
 XXTEA 是一个快速安全的加密算法。本项目是 XXTEA 加密算法的 Java 实现。
