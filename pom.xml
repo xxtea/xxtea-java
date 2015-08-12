@@ -8,6 +8,12 @@
     <description>XXTEA is a fast and secure encryption algorithm. This is a XXTEA library for Java.
 
 It is different from the original XXTEA encryption algorithm. It encrypts and decrypts byte[] instead of 32bit integer array, and the key is also the byte[].</description>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
     <licenses>
         <license>
             <name>MIT License</name>
@@ -16,22 +22,80 @@ It is different from the original XXTEA encryption algorithm. It encrypts and de
     </licenses>
     <scm>
         <connection>scm:git:https://github.com/xxtea/xxtea-java.git</connection>
-        <developerConnection>scm:https://github.com/xxtea/xxtea-java.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/xxtea/xxtea-java.git</developerConnection>
         <url>https://github.com/xxtea/xxtea-java</url>
+        <tag>v1.0.5</tag>
     </scm>
+    <developers>
+        <developer>
+            <id>andot</id>
+            <name>Ma Bingyao</name>
+            <email>mabingyao@gmail.com</email>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/xxtea/xxtea-java/issues</url>
+    </issueManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <dependencies>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <attach>true</attach>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
